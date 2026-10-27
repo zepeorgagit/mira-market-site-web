@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIRAMARKET - De Tu Comunidad al Mundo | Comercio Local & Artesanal</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts: Plus Jakarta Sans / Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              teal: '#0e7c7b',
+              emerald: '#17835b',
+              navy: '#0f2c42',
+              slate: '#1e3a4c',
+              gold: '#c59b27',
+              craft: '#d6c4a8',
+              craftlight: '#fbf9f5',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Estilos personalizados y utilidades de animación */
+    .badge-artisan {
+      background: linear-gradient(135deg, #17835b 0%, #0e7c7b 100%);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    .hero-pattern {
+      background-color: #fbf9f5;
+      background-image: radial-gradient(#17835b 0.65px, transparent 0.65px), radial-gradient(#0e7c7b 0.65px, #fbf9f5 0.65px);
+      background-size: 26px 26px;
+      background-position: 0 0, 13px 13px;
+      background-opacity: 0.05;
+    }
+  </style>
+</head>
+<body class="bg-[#faf8f5] text-slate-800 font-sans antialiased min-h-screen flex flex-col custom-scrollbar">
+
+  <!-- ================= TOP NOTICE BAR ================= -->
+  <div class="bg-brand-navy text-white text-xs sm:text-sm py-2 px-4 text-center flex items-center justify-center gap-2">
+    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-brand-emerald text-white">
+      Fase Piloto Activa
+    </span>
+    <span>¡Impulsando a productores locales! Envíos directos desde el taller a tu puerta.</span>
+  </div>
+
+  <!-- ================= HEADER / NAVEGACIÓN PRINCIPAL ================= -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200 shadow-sm transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4">
+        
+        <!-- LOGO BRAND SVG (Recreado fielmente en alta resolución con fondo transparente) -->
+        <a href="#" onclick="switchMainTab('piel')" class="flex items-center gap-3 group focus:outline-none">
+          <div class="h-12 w-auto flex items-center">
+            <!-- SVG Logo Oficial MiraMarket -->
+            <svg class="h-12 w-auto drop-shadow-sm transition-transform duration-300 group-hover:scale-105" viewBox="0 0 460 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Símbolo Infinito con Manos Entrelazadas -->
+              <g id="infinity-hands">
+                <!-- Anillo Izquierdo (Teal) -->
+                <path d="M120 48C95 18 45 18 20 48C-5 78 5 112 45 112C78 112 105 85 130 58" stroke="#16797b" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Anillo Derecho (Verde Esmeralda) -->
+                <path d="M110 58C135 85 162 112 195 112C235 112 245 78 220 48C195 18 145 18 120 48" stroke="#1c875e" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+                
+                <!-- Apretón de Manos (Centro) -->
+                <rect x="94" y="36" width="12" height="24" rx="3" fill="#146768" transform="rotate(-15 94 36)"/>
+                <rect x="134" y="33" width="12" height="24" rx="3" fill="#17835b" transform="rotate(15 134 33)"/>
+                <!-- Manos centro -->
+                <path d="M102 42 L118 40 C122 40 126 44 126 48 L126 56 C126 58 122 61 117 61 L108 55" fill="#f6d5b8" stroke="#0f2c42" stroke-width="2.5"/>
+                <path d="M138 42 L122 40 C118 40 114 44 114 48 L114 56 C114 58 118 61 123 61 L132 55" fill="#f6d5b8" stroke="#0f2c42" stroke-width="2.5"/>
+                <path d="M112 48 L128 48 M112 52 L128 52 M112 56 L126 56" stroke="#0f2c42" stroke-width="2" stroke-linecap="round"/>
+                
+                <!-- Ojo bajo el apretón (Símbolo Mira) -->
+                <path d="M96 82 C108 72 132 72 144 82 C132 92 108 92 96 82 Z" stroke="#0f2c42" stroke-width="3" fill="none"/>
+                <circle cx="120" cy="82" r="4.5" fill="#0f2c42"/>
+                <path d="M90 85 C96 85 101 82 106 80 M150 85 C144 85 139 82 134 80" stroke="#0f2c42" stroke-width="2.5" stroke-linecap="round"/>
+              </g>
+
+              <!-- Texto MIRAMARKET -->
+              <text x="250" y="70" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="34" fill="#0f2c42" letter-spacing="1.5">MIRAMARKET</text>
+              <!-- Subtítulo Lema -->
+              <text x="252" y="98" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="14" fill="#1b4d6e" letter-spacing="3.2">DE TU COMUNIDAD AL MUNDO</text>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Barra de Búsqueda -->
+        <div class="hidden md:flex flex-1 max-w-md mx-6">
+          <div class="relative w-full">
+            <input 
+              type="text" 
+              id="searchInput"
+              onkeyup="filterProductsBySearch()"
+              placeholder="Buscar zapatos de piel, bolsas, carpinteros, dulces..." 
+              class="w-full bg-stone-100/90 text-sm pl-11 pr-4 py-2.5 rounded-full border border-stone-300 focus:outline-none focus:ring-2 focus:ring-brand-emerald focus:bg-white transition-all shadow-inner"
+            >
+            <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-stone-400"></i>
+          </div>
+        </div>
+
+        <!-- Acciones: Ubicación, Vender & Carrito -->
+        <div class="flex items-center gap-3 sm:gap-4">
+          <div class="hidden lg:flex items-center gap-2 text-xs text-stone-600 bg-stone-100 px-3 py-1.5 rounded-full border border-stone-200">
+            <i class="fa-solid fa-location-dot text-brand-emerald"></i>
+            <span>México <strong class="text-stone-800">· Cobertura Nacional</strong></span>
+          </div>
+
+          <!-- Botón Registrarse como Artesano / Oficio -->
+          <button onclick="openJoinModal()" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold text-brand-teal border border-brand-teal/40 hover:bg-brand-teal/10 px-3.5 py-2 rounded-full transition">
+            <i class="fa-solid fa-store"></i>
+            <span>Vender mi Oficio/Producto</span>
+          </button>
+
+          <!-- Botón Carrito de Compras -->
+          <button onclick="toggleCart()" class="relative bg-brand-navy hover:bg-brand-slate text-white p-3 rounded-full transition shadow-md flex items-center justify-center">
+            <i class="fa-solid fa-bag-shopping text-base"></i>
+            <span id="cartCountBadge" class="absolute -top-1.5 -right-1.5 bg-brand-emerald text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center shadow-sm">
+              0
+            </span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- BUSCADOR MÓVIL (Visible solo en smartphones) -->
+      <div class="pb-3 md:hidden">
+        <div class="relative w-full">
+          <input 
+            type="text" 
+            id="mobileSearchInput"
+            onkeyup="syncMobileSearch(this.value)"
+            placeholder="Buscar productos o servicios locales..." 
+            class="w-full bg-stone-100 text-sm pl-10 pr-4 py-2 rounded-full border border-stone-300 focus:outline-none focus:ring-2 focus:ring-brand-teal"
+          >
+          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= BARRA DE CATEGORÍAS ESCALABLES ================= -->
+    <nav class="bg-white border-t border-stone-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center space-x-1 sm:space-x-4 overflow-x-auto py-2.5 no-scrollbar text-sm font-semibold">
+          
+          <!-- TAB 1: Piel Genuina (Piloto Activo) -->
+          <button id="tab-piel" onclick="switchMainTab('piel')" class="tab-btn flex items-center gap-2 px-4 py-2 rounded-full bg-brand-navy text-white shadow-sm whitespace-nowrap transition">
+            <i class="fa-solid fa-gem text-amber-300"></i>
+            <span>Piel Genuina</span>
+            <span class="text-[10px] bg-brand-emerald text-white font-extrabold uppercase px-1.5 py-0.5 rounded-md">Piloto</span>
+          </button>
+
+          <!-- TAB 2: Gastronomía & Comida (Escalable) -->
+          <button id="tab-comida" onclick="switchMainTab('comida')" class="tab-btn flex items-center gap-2 px-4 py-2 rounded-full text-stone-600 hover:text-stone-900 hover:bg-stone-100 whitespace-nowrap transition">
+            <i class="fa-solid fa-utensils text-brand-emerald"></i>
+            <span>Gastronomía Local</span>
+            <span class="text-[10px] bg-stone-200 text-stone-700 font-bold uppercase px-1.5 py-0.5 rounded-md">Pronto</span>
+          </button>
+
+          <!-- TAB 3: Servicios & Oficios (Directorio de trabajadores) -->
+          <button id="tab-servicios" onclick="switchMainTab('servicios')" class="tab-btn flex items-center gap-2 px-4 py-2 rounded-full text-stone-600 hover:text-stone-900 hover:bg-stone-100 whitespace-nowrap transition">
+            <i class="fa-solid fa-screwdriver-wrench text-brand-teal"></i>
+            <span>Servicios & Oficios</span>
+            <span class="text-[10px] bg-amber-100 text-amber-800 font-bold uppercase px-1.5 py-0.5 rounded-md">Directorio</span>
+          </button>
+
+          <!-- TAB 4: Moda & Textil -->
+          <button id="tab-textil" onclick="switchMainTab('textil')" class="tab-btn flex items-center gap-2 px-4 py-2 rounded-full text-stone-600 hover:text-stone-900 hover:bg-stone-100 whitespace-nowrap transition">
+            <i class="fa-solid fa-shirt text-brand-slate"></i>
+            <span>Moda & Textil Artesanal</span>
+          </button>
+
+          <!-- TAB 5: Conoce la Misión -->
+          <button onclick="document.getElementById('misionSection').scrollIntoView({behavior: 'smooth'})" class="tab-btn flex items-center gap-2 px-4 py-2 rounded-full text-stone-600 hover:text-stone-900 hover:bg-stone-100 whitespace-nowrap transition">
+            <i class="fa-regular fa-handshake text-brand-emerald"></i>
+            <span>Nuestra Comunidad</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ================= HERO BANNER PRINCIPAL ================= -->
+  <section class="hero-pattern border-b border-stone-200 py-10 sm:py-14 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-7 space-y-4 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-emerald/10 text-brand-emerald text-xs font-bold border border-brand-emerald/20">
+            <i class="fa-solid fa-certificate"></i> Garantía 100% Piel Natural & Mano de Obra Local
+          </div>
+          <h1 class="text-3xl sm:text-5xl font-extrabold text-brand-navy leading-tight tracking-tight">
+            Del taller del artesano directo a tus manos.
+          </h1>
+          <p class="text-stone-600 text-base sm:text-lg max-w-2xl leading-relaxed">
+            Bienvenido al piloto oficial de <strong class="text-brand-navy">MIRAMARKET</strong>. Comenzamos celebrando la herencia en marroquinería y calzado con cortes de piel de primera calidad, conectando familias artesanas de tu región con clientes en todo el mundo.
+          </p>
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
+            <a href="#catalogo" class="px-6 py-3 rounded-full bg-brand-emerald hover:bg-[#136e4c] text-white font-bold text-sm shadow-md transition flex items-center gap-2">
+              <i class="fa-solid fa-bag-shopping"></i> Ver Colección de Piel
+            </a>
+            <button onclick="switchMainTab('servicios')" class="px-6 py-3 rounded-full bg-white hover:bg-stone-100 text-brand-navy border border-stone-300 font-bold text-sm transition flex items-center gap-2 shadow-sm">
+              <i class="fa-solid fa-wrench"></i> Explorar Oficios Locales
+            </button>
+          </div>
+        </div>
+
+        <!-- Tarjetas de valores / estadísticas -->
+        <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+          <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-center items-center text-center">
+            <div class="w-12 h-12 rounded-xl bg-brand-teal/10 text-brand-teal flex items-center justify-center text-xl mb-3">
+              <i class="fa-solid fa-cow"></i>
+            </div>
+            <span class="text-2xl font-black text-brand-navy">100% Piel</span>
+            <span class="text-xs text-stone-500 mt-1">Cortes vacunos y curtidos artesanales de alta durabilidad</span>
+          </div>
+
+          <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-center items-center text-center">
+            <div class="w-12 h-12 rounded-xl bg-brand-emerald/10 text-brand-emerald flex items-center justify-center text-xl mb-3">
+              <i class="fa-solid fa-people-carry-box"></i>
+            </div>
+            <span class="text-2xl font-black text-brand-navy">Comercio Justo</span>
+            <span class="text-xs text-stone-500 mt-1">Trato directo con el productor sin comisiones abusivas</span>
+          </div>
+
+          <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-center items-center text-center">
+            <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-xl mb-3">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <span class="text-2xl font-black text-brand-navy">Pedido Directo</span>
+            <span class="text-xs text-stone-500 mt-1">Acuerda detalles, tallas o colores personalizados por WhatsApp</span>
+          </div>
+
+          <div class="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-center items-center text-center">
+            <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-navy flex items-center justify-center text-xl mb-3">
+              <i class="fa-solid fa-box-open"></i>
+            </div>
+            <span class="text-2xl font-black text-brand-navy">Empaque Eco</span>
+            <span class="text-xs text-stone-500 mt-1">Presentación en cajas kraft recicladas selladas con lacre</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTENEDOR PRINCIPAL DINÁMICO ================= -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10" id="catalogo">
+
+    <!-- ================= SECCIÓN 1: PIEL GENUINA (PILOTO ACTIVO) ================= -->
+    <div id="section-piel" class="space-y-8">
+      
+      <!-- Encabezado de la Sección y Subcategorías -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-stone-200 pb-5">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-brand-emerald">Catálogo Piloto</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-navy">Artículos en Piel Auténtica</h2>
+          <p class="text-stone-500 text-sm mt-1">Selecciona una subcategoría para explorar las piezas elaboradas a mano.</p>
+        </div>
+
+        <!-- Filtros de Subcategorías (Pills) -->
+        <div class="flex flex-wrap gap-2" id="subcat-filters">
+          <button onclick="filterLeatherSubcategory('todos', this)" class="subcat-btn px-4 py-2 rounded-full text-xs font-bold bg-brand-emerald text-white shadow-sm transition">
+            Todos (<span id="count-todos">8</span>)
+          </button>
+          <button onclick="filterLeatherSubcategory('calzado', this)" class="subcat-btn px-4 py-2 rounded-full text-xs font-bold bg-stone-100 text-stone-700 hover:bg-stone-200 transition">
+            Zapatos & Calzado
+          </button>
+          <button onclick="filterLeatherSubcategory('bolsos', this)" class="subcat-btn px-4 py-2 rounded-full text-xs font-bold bg-stone-100 text-stone-700 hover:bg-stone-200 transition">
+            Bolsos & Mochilas
+          </button>
+          <button onclick="filterLeatherSubcategory('chamarras', this)" class="subcat-btn px-4 py-2 rounded-full text-xs font-bold bg-stone-100 text-stone-700 hover:bg-stone-200 transition">
+            Chamarras
+          </button>
+          <button onclick="filterLeatherSubcategory('accesorios', this)" class="subcat-btn px-4 py-2 rounded-full text-xs font-bold bg-stone-100 text-stone-700 hover:bg-stone-200 transition">
+            Accesorios (Cintos & Billeteras)
+          </button>
+        </div>
+      </div>
+
+      <!-- GRID DE PRODUCTOS DE PIEL -->
+      <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Generado dinámicamente vía JavaScript con datos reales y botones de compra -->
+      </div>
+
+    </div>
+
+    <!-- ================= SECCIÓN 2: GASTRONOMÍA LOCAL (ESCALABILIDAD FUTURA) ================= -->
+    <div id="section-comida" class="hidden space-y-8">
+      <div class="bg-gradient-to-r from-amber-500/10 via-brand-emerald/10 to-transparent p-6 sm:p-8 rounded-3xl border border-amber-200">
+        <div class="max-w-3xl">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-amber-500 text-white mb-2">Próxima Expansión</span>
+          <h2 class="text-3xl font-extrabold text-brand-navy">Gastronomía, Postres y Dulces Típicos</h2>
+          <p class="text-stone-600 mt-2">
+            La comida nos une. Próximamente podrás ordenar pasteles artesanales, dulces tradicionales de la región, cajeta casera, pan rústico y café orgánico con entrega el mismo día.
+          </p>
+        </div>
+      </div>
+
+      <!-- Grid de Muestra de Alimentos -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <!-- Postres -->
+        <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-md transition">
+          <div class="h-48 bg-stone-100 relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=700&auto=format&fit=crop&q=80" alt="Pastelería Artesanal" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-brand-navy text-xs font-bold px-2.5 py-1 rounded-md">Postres & Pasteles</span>
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-lg text-brand-navy">Repostería Tradicional & Moderna</h3>
+            <p class="text-stone-500 text-xs mt-1">Tartas, pays de nuez y pasteles de tres leches hechos por reposteros de barrio.</p>
+            <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between text-xs text-stone-600">
+              <span>8 cocinas preregistradas</span>
+              <span class="text-brand-emerald font-bold">Registro abierto</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dulces Regionales -->
+        <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-md transition">
+          <div class="h-48 bg-stone-100 relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1582293041079-7814c2f12063?w=700&auto=format&fit=crop&q=80" alt="Dulces Típicos" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-brand-navy text-xs font-bold px-2.5 py-1 rounded-md">Dulces Regionales</span>
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-lg text-brand-navy">Ate, Cajeta y Glorias</h3>
+            <p class="text-stone-500 text-xs mt-1">Golosinas mexicanas elaboradas en cazos de cobre con recetas de generaciones.</p>
+            <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between text-xs text-stone-600">
+              <span>12 talleres de confitería</span>
+              <span class="text-brand-emerald font-bold">En preparación</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Café & Especialidades -->
+        <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-md transition">
+          <div class="h-48 bg-stone-100 relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=700&auto=format&fit=crop&q=80" alt="Café de Altura" class="w-full h-full object-cover">
+            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-brand-navy text-xs font-bold px-2.5 py-1 rounded-md">Cafetería & Miel</span>
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-lg text-brand-navy">Café de Altura & Miel Pura</h3>
+            <p class="text-stone-500 text-xs mt-1">Granos de café de pequeños caficultores y miel de abeja 100% virgen.</p>
+            <div class="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between text-xs text-stone-600">
+              <span>Cooperativas locales</span>
+              <span class="text-brand-emerald font-bold">Próximamente</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Banner de Prerregistro -->
+      <div class="bg-stone-900 text-white rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div>
+          <h4 class="text-lg font-bold">¿Tienes un negocio gastronómico en la comunidad?</h4>
+          <p class="text-stone-400 text-xs mt-1">Preregístrate ahora para ser de los primeros en ofrecer comida y postres en MiraMarket.</p>
+        </div>
+        <button onclick="openJoinModal('Comida')" class="px-5 py-2.5 rounded-full bg-brand-emerald hover:bg-emerald-600 font-bold text-xs whitespace-nowrap transition">
+          Unirme a la lista de espera
+        </button>
+      </div>
+    </div>
+
+    <!-- ================= SECCIÓN 3: SERVICIOS & OFICIOS (DIRECTORIO LOCAL) ================= -->
+    <div id="section-servicios" class="hidden space-y-8">
+      <div class="bg-gradient-to-r from-brand-navy via-brand-slate to-brand-teal text-white p-6 sm:p-8 rounded-3xl shadow-sm">
+        <div class="max-w-3xl">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-white/20 text-white mb-2">Directorio de Confianza</span>
+          <h2 class="text-3xl font-extrabold">Oficios y Servicios de tu Comunidad</h2>
+          <p class="text-white/80 mt-2 text-sm sm:text-base">
+            Conecta sin intermediarios con cerrajeros, electricistas, carpinteros, zapateros y profesionales de tu colonia o municipio. Validados por vecinos.
+          </p>
+        </div>
+      </div>
+
+      <!-- Directorio de Especialistas -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Electricista -->
+        <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-sm flex flex-col justify-between hover:border-brand-emerald transition">
+          <div>
+            <div class="flex items-start justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-lg">
+                  <i class="fa-solid fa-bolt"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-base text-brand-navy">Instalaciones Don Jorge</h3>
+                  <p class="text-xs text-stone-500">Electricista Certificado / 22 años de oficio</p>
+                </div>
+              </div>
+              <span class="bg-emerald-50 text-emerald-700 text-[11px] font-bold px-2 py-0.5 rounded-full">Disponible</span>
+            </div>
+
+            <p class="text-xs text-stone-600 mt-4 leading-relaxed">
+              Especialista en cortocircuitos residenciales, balanceo de cargas, instalación de centros de carga y luminarias LED. Presupuesto sin compromiso.
+            </p>
+
+            <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] text-stone-600 font-medium">
+              <span class="bg-stone-100 px-2 py-1 rounded">Zona Centro y Poniente</span>
+              <span class="bg-stone-100 px-2 py-1 rounded">Atención 24/7 urgencias</span>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-stone-100 flex items-center gap-2">
+            <a href="https://wa.me/?text=Hola%20Don%20Jorge,%20te%20encontr%C3%A9%20en%20MiraMarket%20y%20necesito%20un%20servicio%20el%C3%A9ctrico." target="_blank" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 rounded-full text-center transition flex items-center justify-center gap-2">
+              <i class="fa-brands fa-whatsapp text-sm"></i> Contactar por WhatsApp
+            </a>
+            <button onclick="showQuickAlert('Llamando a Don Jorge: +52 55 1234 5678')" class="p-2.5 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs">
+              <i class="fa-solid fa-phone"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Cerrajero -->
+        <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-sm flex flex-col justify-between hover:border-brand-emerald transition">
+          <div>
+            <div class="flex items-start justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-lg">
+                  <i class="fa-solid fa-key"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-base text-brand-navy">Cerrajería Rápida El Profe</h3>
+                  <p class="text-xs text-stone-500">Aperturas automotrices y del hogar</p>
+                </div>
+              </div>
+              <span class="bg-emerald-50 text-emerald-700 text-[11px] font-bold px-2 py-0.5 rounded-full">Disponible</span>
+            </div>
+
+            <p class="text-xs text-stone-600 mt-4 leading-relaxed">
+              Duplicados de llaves con chip, cambio de guardas, aperturas de emergencia sin romper puertas y cerrojos de alta seguridad.
+            </p>
+
+            <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] text-stone-600 font-medium">
+              <span class="bg-stone-100 px-2 py-1 rounded">Servicio a Domicilio</span>
+              <span class="bg-stone-100 px-2 py-1 rounded">Rapidez garantizada</span>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-stone-100 flex items-center gap-2">
+            <a href="https://wa.me/?text=Hola,%20vi%20tu%20perfil%20de%20Cerrajer%C3%ADa%20en%20MiraMarket%20y%20requiero%20un%20servicio." target="_blank" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 rounded-full text-center transition flex items-center justify-center gap-2">
+              <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Inmediato
+            </a>
+            <button onclick="showQuickAlert('Cerrajería El Profe: +52 55 9876 5432')" class="p-2.5 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs">
+              <i class="fa-solid fa-phone"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Carpintero y Restaurador -->
+        <div class="bg-white rounded-2xl border border-stone-200 p-6 shadow-sm flex flex-col justify-between hover:border-brand-emerald transition">
+          <div>
+            <div class="flex items-start justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-900 flex items-center justify-center font-bold text-lg">
+                  <i class="fa-solid fa-hammer"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-base text-brand-navy">Taller Ebanistería Robles</h3>
+                  <p class="text-xs text-stone-500">Muebles a la medida & restauración</p>
+                </div>
+              </div>
+              <span class="bg-amber-50 text-amber-700 text-[11px] font-bold px-2 py-0.5 rounded-full">Agenda abierta</span>
+            </div>
+
+            <p class="text-xs text-stone-600 mt-4 leading-relaxed">
+              Fabricación de clósets, cocinas integrales, puertas en madera maciza y rescate de muebles antiguos con barnices ecológicos.
+            </p>
+
+            <div class="mt-4 flex flex-wrap gap-1.5 text-[11px] text-stone-600 font-medium">
+              <span class="bg-stone-100 px-2 py-1 rounded">Madera Sustentable</span>
+              <span class="bg-stone-100 px-2 py-1 rounded">Diseño 3D</span>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-stone-100 flex items-center gap-2">
+            <a href="https://wa.me/?text=Hola%20Maestro%20Robles,%20te%20contacto%20desde%20MiraMarket%20para%20cotizar%20un%20trabajo%20de%20madera." target="_blank" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 rounded-full text-center transition flex items-center justify-center gap-2">
+              <i class="fa-brands fa-whatsapp text-sm"></i> Cotizar Proyecto
+            </a>
+            <button onclick="showQuickAlert('Taller Robles: +52 55 4433 2211')" class="p-2.5 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs">
+              <i class="fa-solid fa-phone"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================= SECCIÓN 4: MODA & TEXTIL (COMING SOON) ================= -->
+    <div id="section-textil" class="hidden space-y-6">
+      <div class="text-center py-12 bg-white rounded-3xl border border-stone-200 max-w-2xl mx-auto p-8 shadow-sm">
+        <div class="w-16 h-16 rounded-full bg-brand-teal/10 text-brand-teal mx-auto flex items-center justify-center text-2xl mb-4">
+          <i class="fa-solid fa-vest-patches"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-brand-navy">Bordados & Textil Tradicional</h3>
+        <p class="text-stone-500 text-sm mt-2">
+          Estamos tejiendo alianzas con cooperativas de telares de pedal, guayaberas de lino y vestidos bordados con hilo de seda.
+        </p>
+        <button onclick="switchMainTab('piel')" class="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-emerald text-white text-xs font-bold shadow hover:bg-emerald-600 transition">
+          <i class="fa-solid fa-arrow-left"></i> Volver a Colección de Piel
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ================= SECCIÓN MISIÓN / COMUNIDAD ================= -->
+  <section id="misionSection" class="bg-white border-t border-stone-200 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-brand-teal">Propósito y Raíces</span>
+          <h2 class="text-3xl font-extrabold text-brand-navy mt-1">¿Por qué nace MIRAMARKET?</h2>
+          <p class="text-stone-600 mt-4 text-sm sm:text-base leading-relaxed">
+            Las grandes plataformas globales suelen cobrar comisiones de hasta 35%, obligando a los artesanos locales a abaratar materiales o desaparecer. 
+          </p>
+          <p class="text-stone-600 mt-3 text-sm sm:text-base leading-relaxed">
+            <strong class="text-brand-navy">MIRAMARKET</strong> funciona como un puente transparente: el consumidor recibe artículos de piel genuina y servicios confiables a precios justos, y el creador recibe el 100% del valor de su labor, con una presentación digna y moderna.
+          </p>
+
+          <div class="mt-6 space-y-3">
+            <div class="flex items-center gap-3 text-sm font-semibold text-stone-700">
+              <i class="fa-solid fa-circle-check text-brand-emerald"></i>
+              <span>Trazabilidad de cada producto: sabes exactamente qué taller lo hizo.</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm font-semibold text-stone-700">
+              <i class="fa-solid fa-circle-check text-brand-emerald"></i>
+              <span>Embalaje cuidadoso en cartón ecológico y sello artesanal.</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm font-semibold text-stone-700">
+              <i class="fa-solid fa-circle-check text-brand-emerald"></i>
+              <span>Plataforma modular lista para incorporar comida, moda y servicios.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-stone-50 p-6 sm:p-8 rounded-3xl border border-stone-200 text-center relative overflow-hidden shadow-inner">
+          <div class="w-20 h-20 bg-brand-emerald/10 text-brand-emerald rounded-full flex items-center justify-center mx-auto text-3xl mb-4">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </div>
+          <h3 class="text-xl font-bold text-brand-navy">"¡Gracias por apoyar lo local!"</h3>
+          <p class="text-stone-500 text-xs sm:text-sm mt-2 max-w-sm mx-auto">
+            Cada compra mantiene viva la tradición marroquinera, fomenta el empleo digno y lleva la magia de nuestras manos hacia el mundo.
+          </p>
+          <div class="mt-6 flex justify-center">
+            <div class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-stone-200 shadow-sm text-xs text-brand-navy font-bold">
+              <i class="fa-solid fa-infinity text-brand-teal"></i> MIRAMARKET: Tu Comunidad al Mundo
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-brand-navy text-white text-xs border-t border-brand-slate py-12 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div>
+        <div class="text-lg font-black tracking-wider text-white flex items-center gap-2">
+          <span>MIRAMARKET</span>
+        </div>
+        <p class="text-stone-300 mt-2 text-xs leading-relaxed">
+          Plataforma de comercio comunitario. Proyecto enfocado en impulsar microtalleres de piel, oficios tradicionales y gastronomía regional.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white uppercase tracking-wider text-xs mb-3">Categorías</h4>
+        <ul class="space-y-2 text-stone-300">
+          <li><a href="#" onclick="switchMainTab('piel')" class="hover:text-emerald-400 transition">Calzado en Piel Natural</a></li>
+          <li><a href="#" onclick="switchMainTab('piel')" class="hover:text-emerald-400 transition">Bolsos & Maletines</a></li>
+          <li><a href="#" onclick="switchMainTab('piel')" class="hover:text-emerald-400 transition">Chamarras & Abrigos</a></li>
+          <li><a href="#" onclick="switchMainTab('servicios')" class="hover:text-emerald-400 transition">Directorio de Oficios</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white uppercase tracking-wider text-xs mb-3">Compromiso Local</h4>
+        <ul class="space-y-2 text-stone-300">
+          <li>Taller sin intermediarios</li>
+          <li>Empaques biodegradables</li>
+          <li>Atención personalizada vía WhatsApp</li>
+          <li>Garantía de cuero 100% vacuno</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white uppercase tracking-wider text-xs mb-3">Contacto Directo</h4>
+        <p class="text-stone-300">¿Tienes dudas sobre un producto o deseas publicar tu taller?</p>
+        <a href="https://wa.me/?text=Hola%20equipo%20MiraMarket,%20quisiera%20m%C3%A1s%20informaci%C3%B3n." target="_blank" class="mt-3 inline-flex items-center gap-2 bg-brand-emerald hover:bg-emerald-600 px-4 py-2 rounded-full font-bold text-white transition text-xs">
+          <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Central
+        </a>
+      </div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-stone-400 text-[11px] gap-2">
+      <p>© 2026 MIRAMARKET · De Tu Comunidad al Mundo. Todos los derechos reservados.</p>
+      <p>Código preparado para GitHub Pages / Despliegue Web Estático.</p>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL DEL CARRITO DESLIZANTE (DRAWER) ================= -->
+  <div id="cartModalOverlay" class="fixed inset-0 bg-stone-900/60 backdrop-blur-sm z-50 hidden transition-opacity" onclick="toggleCart()"></div>
+  
+  <aside id="cartDrawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+    <!-- Header Carrito -->
+    <div class="p-5 border-b border-stone-200 flex items-center justify-between bg-[#faf8f5]">
+      <div class="flex items-center gap-2">
+        <i class="fa-solid fa-basket-shopping text-brand-emerald text-lg"></i>
+        <h3 class="font-black text-lg text-brand-navy">Tu Carrito de Compra</h3>
+      </div>
+      <button onclick="toggleCart()" class="w-8 h-8 rounded-full bg-stone-200 hover:bg-stone-300 flex items-center justify-center text-stone-700 transition">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Lista de Productos en el Carrito -->
+    <div id="cartItemsList" class="flex-grow overflow-y-auto p-5 space-y-4 custom-scrollbar">
+      <!-- Se inyecta con JS dinámicamente -->
+    </div>
+
+    <!-- Footer Carrito con Checkout WhatsApp -->
+    <div class="p-5 border-t border-stone-200 bg-[#fbf9f5] space-y-3">
+      <div class="flex justify-between items-center text-sm">
+        <span class="text-stone-500 font-medium">Subtotal estimado:</span>
+        <span id="cartSubtotal" class="font-extrabold text-lg text-brand-navy">$0 MXN</span>
+      </div>
+      <p class="text-[11px] text-stone-500">
+        * Al dar clic en ordenar, se generará el resumen de tu pedido para coordinar talla, color y método de entrega directo por WhatsApp con el taller.
+      </p>
+
+      <button onclick="checkoutWhatsApp()" class="w-full bg-[#1e845c] hover:bg-[#166c4a] text-white font-extrabold py-3.5 px-4 rounded-xl shadow-md transition flex items-center justify-center gap-2 text-sm">
+        <i class="fa-brands fa-whatsapp text-lg"></i>
+        <span>Confirmar Pedido por WhatsApp</span>
+      </button>
+
+      <button onclick="clearCart()" class="w-full text-stone-500 hover:text-rose-600 text-xs text-center py-1 font-semibold transition">
+        Vaciar Carrito
+      </button>
+    </div>
+  </aside>
+
+  <!-- ================= MODAL VISTA RÁPIDA DE PRODUCTO ================= -->
+  <div id="quickViewModal" class="fixed inset-0 z-50 bg-stone-900/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative border border-stone-200 animate-in fade-in zoom-in duration-200">
+      <button onclick="closeQuickView()" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-700 flex items-center justify-center transition">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2" id="quickViewContent">
+        <!-- Contenido dinámico -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL PREREGISTRO / VENDER ================= -->
+  <div id="joinModal" class="fixed inset-0 z-50 bg-stone-900/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative border border-stone-200">
+      <button onclick="closeJoinModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-700 flex items-center justify-center">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="text-center">
+        <div class="w-12 h-12 rounded-2xl bg-brand-emerald/10 text-brand-emerald flex items-center justify-center mx-auto text-xl mb-3">
+          <i class="fa-solid fa-handshake-angle"></i>
+        </div>
+        <h3 class="text-xl font-black text-brand-navy">Forma Parte de MiraMarket</h3>
+        <p class="text-stone-500 text-xs mt-1">Conectamos artesanos, creadores y trabajadores de oficios con la comunidad.</p>
+      </div>
+
+      <form onsubmit="handleJoinSubmit(event)" class="mt-5 space-y-3">
+        <div>
+          <label class="block text-xs font-bold text-stone-700 mb-1">Tu Nombre o Nombre del Taller</label>
+          <input type="text" required placeholder="Ej. Taller Artesanal Don Pepe" class="w-full text-xs p-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-brand-emerald">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-stone-700 mb-1">Giro o Especialidad</label>
+          <select id="joinCategorySelect" class="w-full text-xs p-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-brand-emerald bg-white">
+            <option value="Piel Genuina">Piel Genuina (Calzado, Bolsas, Chamarras)</option>
+            <option value="Gastronomía">Gastronomía & Postres locales</option>
+            <option value="Oficios">Servicios & Oficios (Electricidad, Cerrajería, etc.)</option>
+            <option value="Moda">Moda & Bordados</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-stone-700 mb-1">WhatsApp de Contacto</label>
+          <input type="tel" required placeholder="10 dígitos (Ej: 5512345678)" class="w-full text-xs p-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-brand-emerald">
+        </div>
+        <button type="submit" class="w-full bg-brand-emerald hover:bg-emerald-600 text-white font-bold py-3 rounded-xl text-xs shadow-md transition">
+          Enviar Solicitud de Registro
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= TOAST NOTIFICACIÓN FLOTANTE ================= -->
+  <div id="toastNotification" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-stone-900 text-white px-4 py-3 rounded-2xl shadow-xl flex items-center gap-3 text-xs">
+    <i class="fa-solid fa-circle-check text-brand-emerald text-base"></i>
+    <span id="toastMessage">Producto añadido al carrito</span>
+  </div>
+
+  <!-- ================= JAVASCRIPT DE LA APLICACIÓN ================= -->
+  <script>
+    // 1. BASE DE DATOS LOCAL DE PRODUCTOS DE PIEL (PILOTO ACTIVO)
+    const leatherProducts = [
+      {
+        id: 'piel-01',
+        title: 'Bota Casual Chelsea en Cuero Vacuno',
+        subcat: 'calzado',
+        subcatName: 'Zapatos & Calzado',
+        price: 1450,
+        artisan: 'Taller Don Mateo (Guanajuato)',
+        rating: 4.9,
+        reviews: 28,
+        description: 'Corte 100% piel genuina con curtido vegetal. Suela ligera antiderrapante, elásticos laterales de alta resistencia y plantilla ergonómica.',
+        image: 'https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=600&auto=format&fit=crop&q=80',
+        stock: 'Bajo pedido o entrega 48h'
+      },
+      {
+        id: 'piel-02',
+        title: 'Bolso Tote Bag Marroquinería Fina',
+        subcat: 'bolsos',
+        subcatName: 'Bolsos & Mochilas',
+        price: 1890,
+        artisan: 'Creaciones Doña Elena',
+        rating: 5.0,
+        reviews: 42,
+        description: 'Bolsa espaciosa hecha con flor entera de piel vacuna color cognac. Costuras reforzadas en hilo encerado y forro de algodón suave con bolsillo interior.',
+        image: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=600&auto=format&fit=crop&q=80',
+        stock: 'Disponible en taller'
+      },
+      {
+        id: 'piel-03',
+        title: 'Chamarra de Piel Estilo Biker Vintage',
+        subcat: 'chamarras',
+        subcatName: 'Chamarras',
+        price: 3250,
+        artisan: 'Pieles del Centro',
+        rating: 4.8,
+        reviews: 19,
+        description: 'Piel de cordero de textura suave pero resistente al viento y uso rudo. Cierres metálicos pavonados YKK y forro térmico satinado.',
+        image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=80',
+        stock: 'Tallas S, M, L, XL'
+      },
+      {
+        id: 'piel-04',
+        title: 'Mochila Backpack Universitaria en Piel',
+        subcat: 'bolsos',
+        subcatName: 'Bolsos & Mochilas',
+        price: 2150,
+        artisan: 'Marroquinería Artesanal MX',
+        rating: 4.9,
+        reviews: 35,
+        description: 'Compartimento acolchado para laptop de hasta 15.6 pulgadas. Piel con acabado encerado tipo pull-up que envejece con carácter único.',
+        image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&auto=format&fit=crop&q=80',
+        stock: '5 unidades en stock'
+      },
+      {
+        id: 'piel-05',
+        title: 'Cinturón Grueso de Piel Genuina con Hebilla',
+        subcat: 'accesorios',
+        subcatName: 'Accesorios',
+        price: 480,
+        artisan: 'Talabartería Don Chema',
+        rating: 4.7,
+        reviews: 54,
+        description: 'Tira de cuero de una sola pieza de 4mm de grosor sin rellenos sintéticos. Hebilla de latón sólido desmontable para ajuste a la medida.',
+        image: 'https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=600&auto=format&fit=crop&q=80',
+        stock: 'Tallas 30 a 42'
+      },
+      {
+        id: 'piel-06',
+        title: 'Billetera Bifold Minimalista Cosida a Mano',
+        subcat: 'accesorios',
+        subcatName: 'Accesorios',
+        price: 390,
+        artisan: 'Taller Cuero Sagrado',
+        rating: 5.0,
+        reviews: 61,
+        description: 'Capacidad para 8 tarjetas y billetes doblados. Cosido a mano con puntada tipo saddle stitch indestructible. Acabado en bordes bruñidos.',
+        image: 'https://images.unsplash.com/photo-1627123424574-724758594e93?w=600&auto=format&fit=crop&q=80',
+        stock: 'Entrega inmediata'
+      },
+      {
+        id: 'piel-07',
+        title: 'Zapatos Oxford Clásicos en Cuero Lustrado',
+        subcat: 'calzado',
+        subcatName: 'Zapatos & Calzado',
+        price: 1680,
+        artisan: 'Calzado Fino Hermanos Ruiz',
+        rating: 4.8,
+        reviews: 23,
+        description: 'Zapatos formales de horma elegante con detalles brogue perforados. Curtido natural transpirable con suela de cuero pre-marcada.',
+        image: 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=600&auto=format&fit=crop&q=80',
+        stock: 'Números 25 al 30 MX'
+      },
+      {
+        id: 'piel-08',
+        title: 'Chamarra Bomber en Gamuza de Piel Café',
+        subcat: 'chamarras',
+        subcatName: 'Chamarras',
+        price: 2950,
+        artisan: 'Pieles del Centro',
+        rating: 4.9,
+        reviews: 14,
+        description: 'Suave al tacto con acabado gamuzado premium. Puños y cintura con elásticos reforzados. Estilo atemporal y ligero.',
+        image: 'https://images.unsplash.com/photo-1521223890158-f9f7c3d5d504?w=600&auto=format&fit=crop&q=80',
+        stock: 'Pieza de colección'
+      }
+    ];
+
+    // 2. ESTADO DE LA APLICACIÓN (CARRITO)
+    let cart = [];
+
+    // 3. INICIALIZACIÓN
+    window.onload = function() {
+      renderProducts(leatherProducts);
+      loadCartFromStorage();
+    };
+
+    // 4. RENDERIZAR PRODUCTOS
+    function renderProducts(items) {
+      const container = document.getElementById('productsGrid');
+      if (!container) return;
+
+      if (items.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full py-12 text-center text-stone-500">
+            <i class="fa-regular fa-face-frown text-3xl mb-2 text-stone-400"></i>
+            <p class="font-bold">No encontramos artículos que coincidan con la búsqueda.</p>
+            <button onclick="resetFilters()" class="mt-3 text-xs text-brand-emerald underline font-bold">Ver todos los productos</button>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = items.map(product => `
+        <div class="group bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <!-- Contenedor Imagen con Insignias -->
+            <div class="relative h-56 bg-stone-100 overflow-hidden">
+              <img 
+                src="${product.image}" 
+                alt="${product.title}" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                onerror="this.src='https://placehold.co/600x600/e2e8f0/1e293b?text=Piel+Genuina'"
+              >
+              
+              <div class="absolute top-3 left-3 flex flex-col gap-1 items-start">
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full text-white badge-artisan shadow">
+                  100% Piel
+                </span>
+              </div>
+
+              <!-- Botón Vista Rápida -->
+              <button 
+                onclick="openQuickView('${product.id}')"
+                class="absolute bottom-3 right-3 bg-white/90 hover:bg-white text-brand-navy p-2 rounded-full shadow text-xs font-semibold backdrop-blur-sm transition-transform hover:scale-110"
+                title="Vista rápida"
+              >
+                <i class="fa-solid fa-eye"></i>
+              </button>
+            </div>
+
+            <!-- Información -->
+            <div class="p-4 space-y-2">
+              <div class="flex items-center justify-between text-[11px] text-stone-500 font-medium">
+                <span class="text-brand-emerald font-bold">${product.subcatName}</span>
+                <span class="flex items-center gap-1 text-amber-500">
+                  <i class="fa-solid fa-star text-[10px]"></i> ${product.rating}
+                </span>
+              </div>
+
+              <h3 class="font-bold text-sm text-brand-navy leading-snug group-hover:text-brand-teal transition-colors line-clamp-2">
+                ${product.title}
+              </h3>
+
+              <div class="flex items-center gap-1.5 text-[11px] text-stone-500">
+                <i class="fa-solid fa-store text-stone-400"></i>
+                <span class="truncate">${product.artisan}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Precio y Botón Agregar -->
+          <div class="p-4 pt-0 mt-2">
+            <div class="border-t border-stone-100 pt-3 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] text-stone-400 block font-medium">Precio Local</span>
+                <span class="text-base font-extrabold text-brand-navy">$${product.price.toLocaleString()} MXN</span>
+              </div>
+
+              <button 
+                onclick="addToCart('${product.id}')" 
+                class="bg-brand-emerald hover:bg-emerald-700 text-white px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow-sm active:scale-95"
+              >
+                <i class="fa-solid fa-cart-plus"></i>
+                <span>Agregar</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // 5. CAMBIAR PESTAÑA PRINCIPAL (ESCALABILIDAD A OTRAS CATEGORÍAS)
+    function switchMainTab(tab) {
+      const tabs = ['piel', 'comida', 'servicios', 'textil'];
+      tabs.forEach(t => {
+        const sec = document.getElementById(`section-${t}`);
+        const btn = document.getElementById(`tab-${t}`);
+        if (sec) sec.classList.add('hidden');
+        if (btn) {
+          btn.classList.remove('bg-brand-navy', 'text-white', 'shadow-sm');
+          btn.classList.add('text-stone-600', 'hover:bg-stone-100');
+        }
+      });
+
+      const activeSection = document.getElementById(`section-${tab}`);
+      const activeBtn = document.getElementById(`tab-${tab}`);
+      if (activeSection) activeSection.classList.remove('hidden');
+      if (activeBtn) {
+        activeBtn.classList.add('bg-brand-navy', 'text-white', 'shadow-sm');
+        activeBtn.classList.remove('text-stone-600', 'hover:bg-stone-100');
+      }
+
+      // Scroll suave hacia la sección
+      const catElement = document.getElementById('catalogo');
+      if (catElement) {
+        catElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // 6. FILTRO DE SUBCATEGORÍAS EN PIEL
+    function filterLeatherSubcategory(subcat, element) {
+      // Actualizar estilo visual de botones
+      const buttons = document.querySelectorAll('.subcat-btn');
+      buttons.forEach(b => {
+        b.className = "subcat-btn px-4 py-2 rounded-full text-xs font-bold bg-stone-100 text-stone-700 hover:bg-stone-200 transition";
+      });
+      element.className = "subcat-btn px-4 py-2 rounded-full text-xs font-bold bg-brand-emerald text-white shadow-sm transition";
+
+      if (subcat === 'todos') {
+        renderProducts(leatherProducts);
+      } else {
+        const filtered = leatherProducts.filter(p => p.subcat === subcat);
+        renderProducts(filtered);
+      }
+    }
+
+    // 7. BÚSQUEDA INTEGRADA EN TIEMPO REAL
+    function filterProductsBySearch() {
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      
+      // Si el usuario busca algo relacionado a servicios directamente, sugerir la pestaña
+      if (query.includes('electric') || query.includes('cerraj') || query.includes('carpin')) {
+        switchMainTab('servicios');
+        return;
+      }
+      if (query.includes('postre') || query.includes('dulce') || query.includes('pastel') || query.includes('comida')) {
+        switchMainTab('comida');
+        return;
+      }
+
+      const filtered = leatherProducts.filter(p => 
+        p.title.toLowerCase().includes(query) || 
+        p.description.toLowerCase().includes(query) ||
+        p.artisan.toLowerCase().includes(query) ||
+        p.subcatName.toLowerCase().includes(query)
+      );
+      renderProducts(filtered);
+    }
+
+    function syncMobileSearch(val) {
+      const desktopSearch = document.getElementById('searchInput');
+      if (desktopSearch) {
+        desktopSearch.value = val;
+        filterProductsBySearch();
+      }
+    }
+
+    function resetFilters() {
+      document.getElementById('searchInput').value = '';
+      const firstBtn = document.querySelector('.subcat-btn');
+      if (firstBtn) filterLeatherSubcategory('todos', firstBtn);
+    }
+
+    // 8. LÓGICA DEL CARRITO DE COMPRAS
+    function addToCart(productId) {
+      const item = leatherProducts.find(p => p.id === productId);
+      if (!item) return;
+
+      const existing = cart.find(c => c.id === productId);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ ...item, quantity: 1 });
+      }
+
+      updateCartUI();
+      saveCartToStorage();
+      showToast(`¡"${item.title.substring(0, 24)}..." añadido!`);
+    }
+
+    function updateQuantity(productId, delta) {
+      const index = cart.findIndex(c => c.id === productId);
+      if (index === -1) return;
+
+      cart[index].quantity += delta;
+      if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+      }
+      updateCartUI();
+      saveCartToStorage();
+    }
+
+    function removeFromCart(productId) {
+      cart = cart.filter(c => c.id !== productId);
+      updateCartUI();
+      saveCartToStorage();
+    }
+
+    function clearCart() {
+      cart = [];
+      updateCartUI();
+      saveCartToStorage();
+    }
+
+    function updateCartUI() {
+      const countBadge = document.getElementById('cartCountBadge');
+      const listContainer = document.getElementById('cartItemsList');
+      const subtotalEl = document.getElementById('cartSubtotal');
+
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const totalAmount = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+      if (countBadge) countBadge.textContent = totalItems;
+      if (subtotalEl) subtotalEl.textContent = `$${totalAmount.toLocaleString()} MXN`;
+
+      if (!listContainer) return;
+
+      if (cart.length === 0) {
+        listContainer.innerHTML = `
+          <div class="h-64 flex flex-col items-center justify-center text-center text-stone-400">
+            <i class="fa-solid fa-basket-shopping text-4xl mb-3 text-stone-300"></i>
+            <p class="font-bold text-stone-600 text-sm">Tu carrito está vacío</p>
+            <p class="text-xs text-stone-400 mt-1">Explora las piezas de piel genuina y apoya a los talleres locales.</p>
+          </div>
+        `;
+        return;
+      }
+
+      listContainer.innerHTML = cart.map(item => `
+        <div class="flex items-center gap-3 p-3 bg-stone-50 rounded-xl border border-stone-200">
+          <img src="${item.image}" alt="${item.title}" class="w-16 h-16 object-cover rounded-lg">
+          <div class="flex-grow min-w-0">
+            <h4 class="font-bold text-xs text-brand-navy truncate">${item.title}</h4>
+            <p class="text-[10px] text-stone-500">${item.artisan}</p>
+            <span class="text-xs font-black text-brand-emerald">$${(item.price * item.quantity).toLocaleString()} MXN</span>
+            
+            <div class="flex items-center gap-2 mt-1">
+              <button onclick="updateQuantity('${item.id}', -1)" class="w-5 h-5 rounded bg-white border border-stone-300 flex items-center justify-center text-xs hover:bg-stone-100 font-bold">-</button>
+              <span class="text-xs font-bold text-stone-700">${item.quantity}</span>
+              <button onclick="updateQuantity('${item.id}', 1)" class="w-5 h-5 rounded bg-white border border-stone-300 flex items-center justify-center text-xs hover:bg-stone-100 font-bold">+</button>
+            </div>
+          </div>
+          <button onclick="removeFromCart('${item.id}')" class="text-stone-400 hover:text-rose-600 p-2 transition">
+            <i class="fa-regular fa-trash-can text-sm"></i>
+          </button>
+        </div>
+      `).join('');
+    }
+
+    function toggleCart() {
+      const drawer = document.getElementById('cartDrawer');
+      const overlay = document.getElementById('cartModalOverlay');
+      if (!drawer || !overlay) return;
+
+      const isOpen = !drawer.classList.contains('translate-x-full');
+      if (isOpen) {
+        drawer.classList.add('translate-x-full');
+        overlay.classList.add('hidden');
+      } else {
+        drawer.classList.remove('translate-x-full');
+        overlay.classList.remove('hidden');
+      }
+    }
+
+    // 9. CHECKOUT POR WHATSAPP (CONEXIÓN DIRECTA CON COMERCIO LOCAL)
+    function checkoutWhatsApp() {
+      if (cart.length === 0) {
+        showToast('Agrega al menos un producto a tu carrito primero.');
+        return;
+      }
+
+      let message = `*¡Hola MiraMarket! Deseo hacer el siguiente pedido directo:*\n\n`;
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        message += `${index + 1}. *${item.title}*\n`;
+        message += `   - Cantidad: ${item.quantity}\n`;
+        message += `   - Taller: ${item.artisan}\n`;
+        message += `   - Subtotal: $${itemTotal.toLocaleString()} MXN\n\n`;
+      });
+
+      message += `*TOTAL DEL PEDIDO: $${total.toLocaleString()} MXN*\n\n`;
+      message += `Por favor apóyenme confirmando disponibilidad, método de pago y envío a mi domicilio. ¡Gracias por apoyar lo local!`;
+
+      // Codificar para URL
+      const encodedUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+      window.open(encodedUrl, '_blank');
+    }
+
+    // 10. MODAL DE VISTA RÁPIDA
+    function openQuickView(productId) {
+      const product = leatherProducts.find(p => p.id === productId);
+      if (!product) return;
+
+      const modal = document.getElementById('quickViewModal');
+      const content = document.getElementById('quickViewContent');
+
+      content.innerHTML = `
+        <div class="h-64 sm:h-full bg-stone-100 relative">
+          <img src="${product.image}" alt="${product.title}" class="w-full h-full object-cover">
+          <span class="absolute top-4 left-4 bg-brand-emerald text-white text-xs font-bold px-3 py-1 rounded-full">
+            100% Piel Natural
+          </span>
+        </div>
+        <div class="p-6 sm:p-8 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-brand-emerald uppercase tracking-wider">${product.subcatName}</span>
+            <h3 class="text-xl font-extrabold text-brand-navy mt-1">${product.title}</h3>
+            
+            <div class="flex items-center gap-2 mt-2 text-xs text-stone-500">
+              <span class="text-amber-500 font-bold"><i class="fa-solid fa-star"></i> ${product.rating}</span>
+              <span>·</span>
+              <span>${product.reviews} reseñas comunitarias</span>
+            </div>
+
+            <p class="text-stone-600 text-xs sm:text-sm mt-4 leading-relaxed">
+              ${product.description}
+            </p>
+
+            <div class="mt-4 p-3 bg-stone-50 rounded-xl border border-stone-200 text-xs space-y-1">
+              <div class="text-stone-700"><strong>Productor:</strong> ${product.artisan}</div>
+              <div class="text-stone-700"><strong>Disponibilidad:</strong> ${product.stock}</div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-stone-200 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-stone-400 block">Precio Total</span>
+              <span class="text-xl font-black text-brand-navy">$${product.price.toLocaleString()} MXN</span>
+            </div>
+
+            <button 
+              onclick="addToCart('${product.id}'); closeQuickView();" 
+              class="bg-brand-emerald hover:bg-emerald-700 text-white px-5 py-2.5 rounded-full text-xs font-bold flex items-center gap-2 shadow"
+            >
+              <i class="fa-solid fa-bag-shopping"></i>
+              <span>Añadir al Carrito</span>
+            </button>
+          </div>
+        </div>
+      `;
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeQuickView() {
+      const modal = document.getElementById('quickViewModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // 11. REGISTRO DE ARTESANOS Y TRABAJADORES LOCALES
+    function openJoinModal(preselectCat) {
+      const modal = document.getElementById('joinModal');
+      const sel = document.getElementById('joinCategorySelect');
+      if (preselectCat && sel) {
+        for (let i = 0; i < sel.options.length; i++) {
+          if (sel.options[i].text.includes(preselectCat)) {
+            sel.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeJoinModal() {
+      const modal = document.getElementById('joinModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function handleJoinSubmit(e) {
+      e.preventDefault();
+      closeJoinModal();
+      showToast('¡Gracias! Hemos recibido tu solicitud. Te contactaremos por WhatsApp.');
+    }
+
+    // 12. UTILIDADES: NOTIFICACIONES (TOAST) Y PERSISTENCIA
+    function showToast(text) {
+      const toast = document.getElementById('toastNotification');
+      const msg = document.getElementById('toastMessage');
+      if (!toast || !msg) return;
+
+      msg.textContent = text;
+      toast.classList.remove('opacity-0', 'translate-y-20');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'translate-y-20');
+      }, 3200);
+    }
+
+    function showQuickAlert(text) {
+      showToast(text);
+    }
+
+    function saveCartToStorage() {
+      try {
+        localStorage.setItem('miramarket_cart', JSON.stringify(cart));
+      } catch (e) {
+        console.warn('Storage no disponible');
+      }
+    }
+
+    function loadCartFromStorage() {
+      try {
+        const saved = localStorage.getItem('miramarket_cart');
+        if (saved) {
+          cart = JSON.parse(saved);
+          updateCartUI();
+        }
+      } catch (e) {
+        console.warn('No se pudo cargar el carrito guardado');
+      }
+    }
+  </script>
+</body>
+</html>
